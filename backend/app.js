@@ -1,18 +1,18 @@
-var express = require("express");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const routes = require('./routes');
+const { error404Handler, errorHandler } = require('./middleware');
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-
-var app = express();
-
-app.use(logger("dev"));
+const app = express();
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use('/v1', routes);
+
+app.use(error404Handler);
+app.use(errorHandler);
 
 module.exports = app;

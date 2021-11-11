@@ -1,9 +1,8 @@
-var express = require("express");
-var router = express.Router();
+const express = require('express');
+const users = require('../apiServices/users/routes');
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-    res.send("HOLA MUNDO");
-});
+const router = express.Router();
+
+router.use('/users', users);
 
 module.exports = router;
