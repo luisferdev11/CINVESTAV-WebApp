@@ -1,5 +1,4 @@
 const userModel = require("./model");
-const userDto = require("./dto");
 
 module.exports = {
     async getUsers(req, res) {
@@ -37,19 +36,20 @@ module.exports = {
         return res.send(users);
     },
 
-    async updateUser(req, res) {
-        if (!req.body.username) return res.sendStatus(400);
-        if (!req.body.email) return res.sendStatus(400);
-        const user = await userModel.getUser(req.params.id);
-        if (!user) return res.sendStatus(404);
+    // async updateUser(req, res) {
+    //     if (!req.body.username) return res.sendStatus(400);
+    //     if (!req.body.email) return res.sendStatus(400);
+    //     const user = await userModel.getUser(req.params.id);
+    //     if (!user) return res.sendStatus(404);
 
-        await userModel.updateUser(req.params.id, {
-            username: req.body.username,
-            email: req.body.email,
-        });
+    //     await userModel.updateUser(req.params.id, {
+    //         username: req.body.username,
+    //         email: req.body.email,
+    //     });
 
-        return res.sendStatus(204);
-    },
+    //     return res.sendStatus(204);
+    // },
+
     async deleteUser(req, res) {
         await userModel.deleteUser(req.param.id);
         res.sendStatus(204);
