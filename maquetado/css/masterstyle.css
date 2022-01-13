@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root{
-
+    --principal: #3BBCA0;
+    --secundario: #6C47BB;
+    --dark: #212527;
+    --background: #F3F4F6;
+    --auxiliar: #F3EADA;
 }
 
 *{
@@ -10,11 +14,11 @@
 }
 
 body{
-    background-color: #F3F4F6;
+    background-color: var(--background);
 }
 
 head{
-    padding: 30px, 100px;
+    padding: 1em, 100px;
 }
 
 .header {
@@ -25,7 +29,7 @@ head{
 }
 
 .header__left {
-    padding-left: 2em;
+    margin-left: 2em;
 }
 
 .header__left h2 {
@@ -50,9 +54,64 @@ head{
     width: 10em;
 }
 
-.nav{
+[class|="link"]{
+    text-decoration: none;
+}
+.link-morado{
+    color: var(--secundario);
+}
+.link-verde{
+    color: var(--principal);
+}
+
+
+.nav-container{
     background-color: #212527;
+
+}
+.nav{
+    margin: 0 2em 0 2em;
+    padding: 1em 0 1em;
+    display: flex;
 }
 .nav__text{
-    color: #F3F4F6;
+    font-size: .9em;
+    text-decoration: none;
+    color: var(--background);
+    padding-right: 1em;
+}
+
+.main-content{
+    margin: 0 2em 0 2em;
+}
+
+.info{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info-left h2{
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--principal);
+}
+
+.info-right{
+    width: 70%;
+}
+.info-right img {
+    position: absolute;
+    width: 30em;
+    right: -3em;
+}
+
+.info-btn {
+    font-size: .7em;
+    text-decoration: none;
+    color: var(--background);
+    background-color: var(--secundario);
+    padding: .8em;
+    border-radius: .9em;
 }
