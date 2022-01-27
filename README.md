@@ -2,6 +2,6 @@
 
 Ramas
 
-------------->master: Aqui se pondrán unicamente los cambios más significativos de la aplicación
+------------->master: Aqui se pondrán unicamente las versiones más estables del proyecto
 
 ------------->desarrollo: Aquí se trabajará el desarrollo de toda la aplicacion
